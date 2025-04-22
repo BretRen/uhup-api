@@ -1,0 +1,71 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@hono/hono@^4.7.7": "4.7.7"
+  },
+  "jsr": {
+    "@hono/hono@4.7.7": {
+      "integrity": "74ea9985cb405fada079a922538f6baa06fa1ee150ce409c5bdae2c89ac05cba"
+    }
+  },
+  "redirects": {
+    "https://deno.land/x/appwrite/mod.ts": "https://deno.land/x/appwrite@13.0.0/mod.ts"
+  },
+  "remote": {
+    "https://deno.land/std@0.122.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
+    "https://deno.land/std@0.122.0/_util/os.ts": "dfb186cc4e968c770ab6cc3288bd65f4871be03b93beecae57d657232ecffcac",
+    "https://deno.land/std@0.122.0/path/_constants.ts": "1247fee4a79b70c89f23499691ef169b41b6ccf01887a0abd131009c5581b853",
+    "https://deno.land/std@0.122.0/path/_interface.ts": "1fa73b02aaa24867e481a48492b44f2598cd9dfa513c7b34001437007d3642e4",
+    "https://deno.land/std@0.122.0/path/_util.ts": "2e06a3b9e79beaf62687196bd4b60a4c391d862cfa007a20fc3a39f778ba073b",
+    "https://deno.land/std@0.122.0/path/common.ts": "f41a38a0719a1e85aa11c6ba3bea5e37c15dd009d705bd8873f94c833568cbc4",
+    "https://deno.land/std@0.122.0/path/glob.ts": "7bf2349e818e332a830f3d8874c3f45dd7580b6c742ed50dbf6282d84ab18405",
+    "https://deno.land/std@0.122.0/path/mod.ts": "4465dc494f271b02569edbb4a18d727063b5dbd6ed84283ff906260970a15d12",
+    "https://deno.land/std@0.122.0/path/posix.ts": "34349174b9cd121625a2810837a82dd8b986bbaaad5ade690d1de75bbb4555b2",
+    "https://deno.land/std@0.122.0/path/separator.ts": "8fdcf289b1b76fd726a508f57d3370ca029ae6976fcde5044007f062e643ff1c",
+    "https://deno.land/std@0.122.0/path/win32.ts": "11549e8c6df8307a8efcfa47ad7b2a75da743eac7d4c89c9723a944661c8bd2e",
+    "https://deno.land/x/appwrite@13.0.0/mod.ts": "43bdf2f8b1c05eea7faab053f98a52a392d13dba497b8e3c0fecc1909e2b8637",
+    "https://deno.land/x/appwrite@13.0.0/src/client.ts": "15efe00e03c26a14229d2afa1d0bf54ef57ab46ff4e7b7868d8c13a6c368c32c",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/authentication-factor.ts": "29e807119efb8b21ca8601d1dc271a3c9150e31554351d37e527c44cfd2dec7d",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/authenticator-type.ts": "7aeb0cde9a751325a9d832e9fe7121e2c1047f3491cfb7dc5d98dcb570d5d20f",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/browser.ts": "8203be677b378978fe68aed4bf017c2fa026909142136871d1abcf06706b3c3a",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/compression.ts": "1d47a07ead40d9eba8e4147c4b081255644d6682ac7e7baf6cf38c4b7357488b",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/credit-card.ts": "ef5b5fa1797d930859e81d890dca89036e4a70dceb8b2fdd194ee847d5848678",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/execution-method.ts": "19b2ada306921d8fcb63b22fc62cb8e9ab0688a85bcf592e4ffa30aeb4c13147",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/flag.ts": "caca8522be16bdb623c4f82c4e2c7aa27f8f1b16ee1b02a29b5ba455a0a319af",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/image-format.ts": "9cd48630774a6964050b2194376b50075c0b09d2e8690e552f2ab69ae4806be3",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/image-gravity.ts": "59321342115ca14998959c816ece2653199758d90352ef2af178df6a8b4ebbde",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/index-type.ts": "ce3cc6e834a22c4237bfe22fa05acc6d0f1fb3c326581104fd15ed07c13126bc",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/message-priority.ts": "d260dbde8537c523c8de35d0cea6a982627690271118850f01f91b50eee96c17",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/messaging-provider-type.ts": "c9b2e535c6f9d042f6e1ed22deeefc064487a4898b43451d79100913dd04ac38",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/name.ts": "deed8a7ea24dc1f4a4ea188875ab7cf944d33c1db8a761ca74eddd6fff08676f",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/o-auth-provider.ts": "7cda0e215248b640c5e49169eb16be6e4057abfa2876bf5969f4b7805cf9e088",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/password-hash.ts": "5d15e8adcc6e618e87d6b3a99d9089a8c2b4861f86ad0693b6ef3cc63dacff48",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/relation-mutate.ts": "d7ce3e2945278544ba21c2efdab65678c578db10cd764ca3c874d840d4065ddd",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/relationship-type.ts": "9b985dfef86b595759bbccfc5520142d2671e2b6f4b6d498d94ff36c52a1122f",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/runtime.ts": "afe9f088efa66b416eddcb535d3058460021e183a552ccf8ee324e7211bd2a53",
+    "https://deno.land/x/appwrite@13.0.0/src/enums/smtp-encryption.ts": "54730a29af7a7e43fe9b1d9d85c3f7283599eaa26ed4ed6470b629d69d2b2825",
+    "https://deno.land/x/appwrite@13.0.0/src/exception.ts": "ff67ae43c8a4e4bc449294ba3a2cb4c1c593cf8ebbbca8917467c906486495b8",
+    "https://deno.land/x/appwrite@13.0.0/src/id.ts": "e11d66ce1456f74146cff9cd18b35c4ee04a00336b6a60a5e687f8779fab307a",
+    "https://deno.land/x/appwrite@13.0.0/src/inputFile.ts": "8f9e9bac6130b854a6c28c1b1bb00d31a512e175459f595db350506fa2740bfe",
+    "https://deno.land/x/appwrite@13.0.0/src/permission.ts": "3aeba3d58059ae762ebfd75bf82c7b8bf1e75a28f105f6cfd6d650d300c2308d",
+    "https://deno.land/x/appwrite@13.0.0/src/query.ts": "7671bd9aacb219f1c54b37bf03a56a54e993ba9c232c479e41f0b9e9c310a49e",
+    "https://deno.land/x/appwrite@13.0.0/src/role.ts": "72ad85e15bd681f701c7fb9df6221a65965455596b06622a4ad11d87dce44358",
+    "https://deno.land/x/appwrite@13.0.0/src/service.ts": "4a8227462b0e6af12956a0f9573c6360582a38cc3eb215bd480e50e398ff69d3",
+    "https://deno.land/x/appwrite@13.0.0/src/services/account.ts": "442b7d487204c21ec3ef89589acb9759307ac8299ec17b2fcf28ad12492e6324",
+    "https://deno.land/x/appwrite@13.0.0/src/services/avatars.ts": "387d495b3e0cb451e7d03f64fd2afa6a5fda69680d5cddb01a7d355b0ef715bf",
+    "https://deno.land/x/appwrite@13.0.0/src/services/databases.ts": "e6fced44e2d827ed06d4968bd7db7b2ac1eb66ac02d7d9ee2e3336f30088ec2d",
+    "https://deno.land/x/appwrite@13.0.0/src/services/functions.ts": "741fcb561e090a25f8af6938939107503e18cf1a640cf86054aedd6be8467fd6",
+    "https://deno.land/x/appwrite@13.0.0/src/services/graphql.ts": "afc0f0d1b3ebb2ad660e99ca931eb9ffb148a174fcf3555ed695d4d9133ce791",
+    "https://deno.land/x/appwrite@13.0.0/src/services/health.ts": "def4cab45a4b3b2d2c1442e5a3a308fa07c94d384a8c5b8ebf09bec0ac1ae313",
+    "https://deno.land/x/appwrite@13.0.0/src/services/locale.ts": "c55512dccc109e43b96a4af0e6e3f39c18c093a36962cfab4c91d939dc335f36",
+    "https://deno.land/x/appwrite@13.0.0/src/services/messaging.ts": "430dc7a5c1a416ba0e04db07aa2e5d34faf8a8a2453556e2cdd101d599e4289b",
+    "https://deno.land/x/appwrite@13.0.0/src/services/storage.ts": "4fbadfd24b3f4ed3c06594de053900e76dc28bf69ee7bf64eab653af2fedf7ec",
+    "https://deno.land/x/appwrite@13.0.0/src/services/teams.ts": "a5ee195aecdb0800e3cdbde86ee6228822416f50e65d2856bec87c806540d92e",
+    "https://deno.land/x/appwrite@13.0.0/src/services/users.ts": "4fa9a2332e2d0725bf93111720e69c9f2cf449f74fa29e99b3537f47f75d29d9"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@hono/hono@^4.7.7"
+    ]
+  }
+}
