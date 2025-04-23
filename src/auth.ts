@@ -27,8 +27,10 @@ const isUserInTeam = async (teamId: string, userId: string) => {
 };
 
 export const authMiddleware: MiddlewareHandler = async (c, next) => {
-  const email = c.req.query("email");
-  const password = c.req.query("password");
+  const email = c.req.header('X-Auth-email');
+  const password = c.req.header('X-Auth-password');
+
+    
 
   if (!email || !password) {
     return c.json({ error: "Missing email or password" }, 400);

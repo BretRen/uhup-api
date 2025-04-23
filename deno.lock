@@ -1,5 +1,5 @@
 {
-  "version": "5",
+  "version": "4",
   "specifiers": {
     "jsr:@hono/hono@^4.7.7": "4.7.7"
   },
