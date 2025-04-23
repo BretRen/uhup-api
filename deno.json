@@ -4,7 +4,7 @@
     "hono": "jsr:@hono/hono@^4.7.7"
   },
   "tasks": {
-    "start": "deno run --watch --allow-net ./src/main.ts"
+    "start": "deno run --unstable-kv --watch --allow-net ./src/main.ts"
   },
   "compilerOptions": {
     "jsx": "precompile",

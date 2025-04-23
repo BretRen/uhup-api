@@ -3,7 +3,7 @@ import {
   Account,
   Client,
   ID,
-//   Query,
+  //   Query,
   Teams,
   Users,
 } from "https://deno.land/x/appwrite/mod.ts";
@@ -21,43 +21,46 @@ const users = new Users(client);
 const teams = new Teams(client);
 
 export const auth_users_list = async (c: Context) => {
-    const result = await users.list();
-    return c.json(result);
+  const result = await users.list();
+  return c.json(result);
 };
 
 export const auth_users_c = async (c: Context) => {
-    let body;
-    try {
-        body = await c.req.json()
-    }catch {
-        return c.json({error:"Please provide your email address and password and team."},400)
-    }
+  let body;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({
+      error: "Please provide your email address and password and team.",
+    }, 400);
+  }
 
-    const { email, password, team, name } = body
-    if (!email || !password || !team || !name) {
-        return c.json({ error: "Missing email or password or team or name" }, 400);
-    }
+  const { email, password, team, name } = body;
+  if (!email || !password || !team || !name) {
+    return c.json({ error: "Missing email or password or team or name" }, 400);
+  }
 
-    if (team != "68047b2200300edc4685" && team != "68047b1a0026b2a5cda3" && team != "Admin"){
-        return c.json({error:"Team can only be composed of Student(68047b2200300edc4685), Teacher(68047b1a0026b2a5cda3), Admin(68044b160015d54c5d20)"})
-    }
+  if (
+    team != "68047b2200300edc4685" && team != "68047b1a0026b2a5cda3" &&
+    team != "Admin"
+  ) {
+    return c.json({
+      error:
+        "Team can only be composed of Student(68047b2200300edc4685), Teacher(68047b1a0026b2a5cda3), Admin(68044b160015d54c5d20)",
+    });
+  }
 
-    
-
-    try {
-        const user = await account.create(ID.unique(), email, password,name);
-        console.log(user)
-        const member = await teams.createMembership(
-            team,
-            [],
-            user.email
-            );
-        console.log(member)
-        return c.json({message:"ok",member,user})
-    }catch (e) {
-        return c.json({error:e},500)
-    }
-
-    
-    
-}
+  try {
+    const user = await account.create(ID.unique(), email, password, name);
+    console.log(user);
+    const member = await teams.createMembership(
+      team,
+      [],
+      user.email,
+    );
+    console.log(member);
+    return c.json({ message: "ok", member, user });
+  } catch (e) {
+    return c.json({ error: e }, 500);
+  }
+};
