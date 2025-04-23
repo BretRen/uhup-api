@@ -1,5 +1,6 @@
 {
   "imports": {
+    "@zaubrik/djwt": "jsr:@zaubrik/djwt@^3.0.2",
     "hono": "jsr:@hono/hono@^4.7.7"
   },
   "tasks": {

@@ -1,4 +1,5 @@
 import { MiddlewareHandler } from "hono";
+import { verify } from "@zaubrik/djwt";
 import {
   Account,
   Client,
@@ -19,6 +20,8 @@ const teams = new Teams(client);
 const superAdminTeamId = "68044b0f00105ec315b4";
 const adminTeamId = "68044b160015d54c5d20";
 
+const secret:string = "3y1o23rgf2y399gr7ef";
+
 const isUserInTeam = async (teamId: string, userId: string) => {
   const response = await teams.listMemberships(teamId, [
     Query.equal("userId", [userId]),
@@ -27,32 +30,58 @@ const isUserInTeam = async (teamId: string, userId: string) => {
 };
 
 export const authMiddleware: MiddlewareHandler = async (c, next) => {
-  const email = c.req.header('X-Auth-email');
-  const password = c.req.header('X-Auth-password');
+  const jwt: string | undefined = c.req.header('X-Auth-Token');
 
-    
-
-  if (!email || !password) {
-    return c.json({ error: "Missing email or password" }, 400);
+  // 检查 token 是否存在
+  if (!jwt) {
+    return c.json({ error: "Token is required" }, 401);
   }
 
-  let session;
   try {
-    session = await account.createEmailPasswordSession(email, password);
-  } catch {
-    return c.json({ error: "Invalid email or password" }, 401);
+    // 使用 Web Crypto API 将字符串密钥转换为 CryptoKey 对象
+    const key = await crypto.subtle.importKey(
+      "raw", // 原始密钥格式
+      new TextEncoder().encode(secret), // 将字符串转为字节数组
+      { name: "HMAC", hash: { name: "SHA-256" } }, // 使用 HMAC 和 SHA-256
+      false, // 密钥不可用于加密或解密
+      ["verify"] // 密钥只用于验证
+    );
+
+    // 使用转换后的 CryptoKey 进行验证
+    const payload = await verify(jwt, key);
+
+    // 验证成功，将用户信息存入上下文中
+    c.set("user", payload);
+    console.log(payload.email); // 例如： "admin@example.com"
+  } catch (err) {
+    // 捕获 JWT 验证失败的错误
+    console.error("Invalid or expired token", err);
+    return c.json({ error: "Invalid or expired token" }, 401);
   }
 
-  const { userId } = session;
+  await next();
 
-  const isSuperAdmin = await isUserInTeam(superAdminTeamId, userId);
-  const isAdmin = await isUserInTeam(adminTeamId, userId);
+  // if (!email || !password) {
+  //   return c.json({ error: "Missing email or password" }, 400);
+  // }
 
-  if (!(isSuperAdmin || isAdmin)) {
-    return c.json({ error: "Permission denied" }, 403);
-  }
+  // let session;
+  // try {
+  //   session = await account.createEmailPasswordSession(email, password);
+  // } catch {
+  //   return c.json({ error: "Invalid email or password" }, 401);
+  // }
 
-  // 存到 context，路由中可取出使用
-  c.set("user", session);
+  // const { userId } = session;
+
+  // const isSuperAdmin = await isUserInTeam(superAdminTeamId, userId);
+  // const isAdmin = await isUserInTeam(adminTeamId, userId);
+
+  // if (!(isSuperAdmin || isAdmin)) {
+  //   return c.json({ error: "Permission denied" }, 403);
+  // }
+
+  // // 存到 context，路由中可取出使用
+  // c.set("user", session);
   await next();
 };
